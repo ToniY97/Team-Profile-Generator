@@ -91,8 +91,6 @@ function promptIntern() {
 }
 
 // Function to initiate the application
-// Function to initiate the application
-// Function to initiate the application
 async function init() {
   try {
     // Menu to add more team members
