@@ -139,3 +139,14 @@ function promptEngineer() {
       },
     ]);
   }
+
+  function promptIntern() {
+    const employeeData = await promptEmployee(); // Prompt for common employee information
+    return inquirer.prompt([
+      {
+        type: "input",
+        name: "school",
+        message: "Enter the intern's school:",
+      },
+    ]);
+  }
