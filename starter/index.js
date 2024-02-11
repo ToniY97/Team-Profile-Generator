@@ -1,6 +1,6 @@
 const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const Employee = require('./Employee');
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -67,6 +67,58 @@ function promptEngineer() {
       },
     ]);
   }
+
+  function promptEmployee() {
+    return inquirer.prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Enter the engineer's name:",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Enter the engineer's employee ID:",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Enter the engineer's email address:",
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "Enter the engineer's GitHub username:",
+      },
+    ]);
+  }
+  
+  // Function to prompt for intern's information
+  function promptIntern() {
+    return inquirer.prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Enter the intern's name:",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Enter the intern's employee ID:",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Enter the intern's email address:",
+      },
+      {
+        type: "input",
+        name: "school",
+        message: "Enter the intern's school:",
+      },
+    ]);
+  }
+  
 
   // Function to initiate the application
 async function init() {
