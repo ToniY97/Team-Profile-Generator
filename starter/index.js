@@ -41,3 +41,42 @@ function promptManager() {
     },
   ]);
 }
+
+// Function to prompt for engineer's information
+function promptEngineer() {
+    return inquirer.prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Enter the engineer's name:",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Enter the engineer's employee ID:",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Enter the engineer's email address:",
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "Enter the engineer's GitHub username:",
+      },
+    ]);
+  }
+
+  // Function to initiate the application
+async function init() {
+    try {
+      // Prompt for manager's information
+      const managerData = await promptManager();
+      const manager = new Manager(
+        managerData.name,
+        managerData.id,
+        managerData.email,
+        managerData.officeNumber
+      );
+      teamMembers.push(manager);
