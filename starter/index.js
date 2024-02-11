@@ -127,3 +127,15 @@ async function init() {
         managerData.officeNumber
       );
       teamMembers.push(manager);
+
+      // Function to prompt for engineer's information
+function promptEngineer() {
+    const employeeData = await promptEmployee(); // Prompt for common employee information
+    return inquirer.prompt([
+      {
+        type: "input",
+        name: "github",
+        message: "Enter the engineer's GitHub username:",
+      },
+    ]);
+  }
