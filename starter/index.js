@@ -92,6 +92,7 @@ function promptIntern() {
 
 // Function to initiate the application
 // Function to initiate the application
+// Function to initiate the application
 async function init() {
   try {
     // Menu to add more team members
@@ -148,8 +149,11 @@ async function init() {
       }
     }
 
-    // Generate HTML and write to file asynchronously
+    // Generate HTML
     const html = render(teamMembers);
+
+    // Write HTML to file asynchronously
+    await fs.promises.mkdir(OUTPUT_DIR, { recursive: true }); // Create output directory if not exists
     await fs.promises.writeFile(outputPath, html);
 
     console.log(`Team profile successfully generated! Check ${outputPath}`);
